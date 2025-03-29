@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 15, 61, 46;
+  --background-rgb: 245, 230, 218;
+  --primary: 15, 61, 46;
+  --accent: 212, 175, 55;
+  --secondary: 245, 230, 218;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+.fancy-text {
+  font-family: 'Great Vibes', cursive;
+}
+
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-link {
+  position: relative;
+  color: rgb(var(--primary));
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: rgb(var(--accent));
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+  width: 80%;
+  left: 10%;
+}
+
+.hero-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 61, 46, 0.3),
+    rgba(15, 61, 46, 0.7)
+  );
+}
